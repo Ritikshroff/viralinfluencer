@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* index.css */
+body {
+  font-family: 'YourFontFamily', sans-serif; /* Replace with your font */
+  background-color: #f8f9fa; /* Replace with your background color */
+  color: #343a40; /* Replace with your text color */
+}
+
+h1, h2, h3 {
+  color: #2269a1; /* Replace with your primary color */
+}
+
+/* Add any additional styles here */
+
+/* Add to your CSS file */
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

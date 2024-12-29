@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Viralfluencer - Influencer Marketing Agency</title>
+  <style>
+    html, body { margin: 0; padding: 0; height: 100%; }
+  </style>
+</head>
+<body>
+<section id="section-7d069fc9-179e-49da-9ef1-ea68c7c0f686"><htmlCode>
+<div id="root">
+  <section id="navbar_hero" class="relative bg-white">
+    <!-- Navigation -->
+    <nav class="absolute top-0 left-0 w-full z-50" x-data="{ isOpen: false }">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <!-- Logo -->
+          <div class="flex-shrink-0">
+            <h1 class="text-2xl font-bold font-heading text-primary-600">Viralfluencer</h1>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="#" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Home</a>
+            <a href="#services" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Services</a>
+            <a href="#influencer_categories" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Influencers</a>
+            <a href="#case_studies" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Case Studies</a>
+            <a href="#contact_form" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Contact Us</a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden">
+            <button @click="isOpen = !isOpen" class="text-gray-700 hover:text-primary-600 focus:outline-none">
+              <svg class="h-6 w-6" x-show="!isOpen" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+              <svg class="h-6 w-6" x-show="isOpen" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div class="md:hidden" x-show="isOpen" @click.away="isOpen = false" 
+           x-transition:enter="transition ease-out duration-200"
+           x-transition:enter-start="opacity-0 transform -translate-y-2"
+           x-transition:enter-end="opacity-100 transform translate-y-0"
+           x-transition:leave="transition ease-in duration-150"
+           x-transition:leave-start="opacity-100 transform translate-y-0"
+           x-transition:leave-end="opacity-0 transform -translate-y-2"
+           style="display: none;">
+        <div class="px-2 pt-2 pb-3 space-y-1 bg-white shadow-lg">
+          <a href="#" class="block px-3 py-2 text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md">Home</a>
+          <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md">Services</a>
+          <a href="#influencer_categories" class="block px-3 py-2 text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md">Influencers</a>
+          <a href="#case_studies" class="block px-3 py-2 text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md">Case Studies</a>
+          <a href="#contact_form" class="block px-3 py-2 text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md">Contact Us</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative pt-32 pb-20 sm:pt-40 sm:pb-24 lg:pb-32">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+          <div class="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
+            <h2 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
+              <span class="block">Boost Your Brand with</span>
+              <span class="block text-primary-600">Influencer Marketing That Works</span>
+            </h2>
+            <p class="mt-3 text-base text-gray-600 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+              Connect with the perfect influencers for your brand and create impactful marketing campaigns that drive real results.
+            </p>
+            <div class="mt-8 sm:mt-12">
+              <a href="#contact_form" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 transition-colors duration-300">
+                Book a Consultation
+              </a>
+            </div>
+          </div>
+          <div class="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
+            <div class="relative mx-auto w-full rounded-lg shadow-lg lg:max-w-md">
+              <div class="relative block w-full bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg overflow-hidden animate-float">
+                <div class="aspect-w-16 aspect-h-9">
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="p-8 text-center text-white">
+                      <div class="flex justify-center space-x-6 mb-6">
+                        <i class="fas fa-hashtag text-4xl"></i>
+                        <i class="fas fa-heart text-4xl"></i>
+                        <i class="fas fa-share text-4xl"></i>
+                      </div>
+                      <p class="text-xl font-semibold">Amplify Your Brand's Voice</p>
+                      <p class="mt-2">Through Strategic Influencer Partnerships</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</htmlCode></section>
+<section id="section-d8fe0a13-6596-469a-8711-59b5f7579afc"><htmlCode>
+<div id="root">
+  <section id="about" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl font-heading">
+          Why Choose Viralfluencer?
+        </h2>
+        <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+          We connect brands to influencers to deliver ROI-driven campaigns that amplify your message and drive real results.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Brand Growth -->
+        <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="text-primary-600 mb-4">
+            <i class="fas fa-chart-line text-4xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Proven Brand Growth</h3>
+          <p class="text-gray-600">
+            Drive measurable results with data-driven influencer campaigns that align with your brand goals and target audience.
+          </p>
+          <div class="mt-6 text-primary-600">
+            <div class="flex items-center justify-center space-x-2 text-lg font-semibold">
+              <i class="fas fa-arrow-trend-up"></i>
+              <span>300%+</span>
+            </div>
+            <p class="text-sm text-gray-600 mt-1">Average ROI</p>
+          </div>
+        </div>
+
+        <!-- Perfect Matches -->
+        <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="text-primary-600 mb-4">
+            <i class="fas fa-handshake text-4xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Perfect Influencer Matches</h3>
+          <p class="text-gray-600">
+            Access our curated network of authentic influencers who align with your brand values and target audience.
+          </p>
+          <div class="mt-6 text-primary-600">
+            <div class="flex items-center justify-center space-x-2 text-lg font-semibold">
+              <i class="fas fa-users"></i>
+              <span>10K+</span>
+            </div>
+            <p class="text-sm text-gray-600 mt-1">Vetted Influencers</p>
+          </div>
+        </div>
+
+        <!-- Campaign Management -->
+        <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="text-primary-600 mb-4">
+            <i class="fas fa-rocket text-4xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">End-to-End Campaign Management</h3>
+          <p class="text-gray-600">
+            From strategy to execution and reporting, we handle every aspect of your influencer marketing campaigns.
+          </p>
+          <div class="mt-6 text-primary-600">
+            <div class="flex items-center justify-center space-x-2 text-lg font-semibold">
+              <i class="fas fa-check-circle"></i>
+              <span>100%</span>
+            </div>
+            <p class="text-sm text-gray-600 mt-1">Managed Service</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center">
+        <div class="inline-flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+          <div class="flex items-center space-x-2 text-gray-600">
+            <i class="fas fa-check-circle text-primary-600"></i>
+            <span>Data-Driven Approach</span>
+          </div>
+          <div class="flex items-center space-x-2 text-gray-600">
+            <i class="fas fa-check-circle text-primary-600"></i>
+            <span>Transparent Reporting</span>
+          </div>
+          <div class="flex items-center space-x-2 text-gray-600">
+            <i class="fas fa-check-circle text-primary-600"></i>
+            <span>Brand Safety Guaranteed</span>
+          </div>
+        </div>
+        <a href="#contact_form" class="inline-block mt-8 px-8 py-3 text-base font-medium text-white bg-primary-600 hover:bg-primary-700 rounded-md transition-colors duration-300">
+          Start Your Campaign
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+</htmlCode></section>
+<section id="section-80a90633-6a03-436e-917e-2f79b78bd9b0"><htmlCode>
+<div id="root">
+  <section id="services" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl font-heading">
+          Our Services
+        </h2>
+        <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+          Comprehensive influencer marketing solutions tailored to your brand's needs
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Influencer Discovery -->
+        <div class="group bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+          <div class="text-primary-600 mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i class="fas fa-search text-5xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Influencer Discovery & Outreach</h3>
+          <p class="text-gray-600 mb-6">
+            Find the perfect influencers for your brand using our advanced matching algorithm and verification process.
+          </p>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-center">
+              <i class="fas fa-check text-primary-600 mr-2"></i>
+              Database Analysis
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-primary-600 mr-2"></i>
+              Audience Verification
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-primary-600 mr-2"></i>
+              Brand Alignment
+            </li>
+          </ul>
+        </div>
+
+        <!-- Campaign Management -->
+        <div class="group bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+          <div class="text-primary-600 mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i class="fas fa-tasks text-5xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Campaign Management</h3>
+          <p class="text-gray-600 mb-6">
+            End-to-end campaign management from planning to execution and optimization.
+          </p>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-center">
+              <i class="fas fa-check text-primary-600 mr-2"></i>
+              Strategy Development
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-primary-600 mr-2"></i>
+              Timeline Planning
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-primary-600 mr-2"></i>
+              Real-time Optimization
+            </li>
+          </ul>
+        </div>
+
+        <!-- Content Creation -->
+        <div class="group bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+          <div class="text-primary-600 mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i class="fas fa-paint-brush text-5xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Content Creation & Strategy</h3>
+          <p class="text-gray-600 mb-6">
+            Creative direction and content strategy that resonates with your target audience.
+          </p>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-center">
+              <i class="fas fa-check text-primary-600 mr-2"></i>
+              Creative Direction
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-primary-600 mr-2"></i>
+              Content Guidelines
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-primary-600 mr-2"></i>
+              Brand Consistency
+            </li>
+          </ul>
+        </div>
+
+        <!-- Performance Analysis -->
+        <div class="group bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+          <div class="text-primary-600 mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i class="fas fa-chart-bar text-5xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Performance Analysis & Reporting</h3>
+          <p class="text-gray-600 mb-6">
+            Comprehensive analytics and insights to measure campaign success and ROI.
+          </p>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-center">
+              <i class="fas fa-check text-primary-600 mr-2"></i>
+              Real-time Tracking
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-primary-600 mr-2"></i>
+              ROI Analysis
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-primary-600 mr-2"></i>
+              Performance Insights
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center">
+        <a href="#contact_form" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 transition-colors duration-300">
+          Get Started
+          <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+</htmlCode></section>
+<section id="section-a6a45532-5de9-4483-a029-d6876f4bdc05"><htmlCode>
+<div id="root">
+  <section id="workflow" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl font-heading">
+          How It Works
+        </h2>
+        <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+          Our streamlined process ensures successful influencer marketing campaigns
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+        <!-- Connection lines for desktop -->
+        <div class="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-primary-100 via-primary-500 to-primary-100"></div>
+
+        <!-- Step 1 -->
+        <div class="relative">
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group">
+            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold">1</div>
+            <div class="text-primary-600 mb-6 text-center group-hover:scale-110 transition-transform duration-300">
+              <i class="fas fa-bullseye text-5xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Define Brand Goals</h3>
+            <p class="text-gray-600 text-center">
+              We work together to understand your objectives and target audience
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="relative">
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group">
+            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold">2</div>
+            <div class="text-primary-600 mb-6 text-center group-hover:scale-110 transition-transform duration-300">
+              <i class="fas fa-user-check text-5xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Find Perfect Influencers</h3>
+            <p class="text-gray-600 text-center">
+              Match you with influencers that align with your brand values
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="relative">
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group">
+            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold">3</div>
+            <div class="text-primary-600 mb-6 text-center group-hover:scale-110 transition-transform duration-300">
+              <i class="fas fa-rocket text-5xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Launch Campaigns</h3>
+            <p class="text-gray-600 text-center">
+              Execute campaigns with our proven strategy and management
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="relative">
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group">
+            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold">4</div>
+            <div class="text-primary-600 mb-6 text-center group-hover:scale-110 transition-transform duration-300">
+              <i class="fas fa-chart-line text-5xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Analyze & Scale</h3>
+            <p class="text-gray-600 text-center">
+              Track performance and optimize for maximum ROI
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center">
+        <a href="#contact_form" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 transition-colors duration-300">
+          Start Your Journey
+          <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+</htmlCode></section>
+<section id="section-595835d1-0ea8-4844-acec-990e7681fd94"><htmlCode>
+<div id="root">
+  <section id="influencer_categories" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl font-heading">
+          Our Influencer Network
+        </h2>
+        <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+          Connect with influencers across different categories and reach levels
+        </p>
+      </div>
+
+      <!-- Influencer Types -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <!-- Nano Influencers -->
+        <div class="group bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+          <div class="text-primary-600 mb-6 text-center group-hover:scale-110 transition-transform duration-300">
+            <i class="fas fa-user-friends text-5xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2 text-center">Nano Influencers</h3>
+          <p class="text-gray-600 text-center mb-4">1K - 10K Followers</p>
+          <div class="text-sm text-gray-500 text-center">
+            High engagement rates<br>
+            Authentic connections<br>
+            Niche communities
+          </div>
+        </div>
+
+        <!-- Micro Influencers -->
+        <div class="group bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+          <div class="text-primary-600 mb-6 text-center group-hover:scale-110 transition-transform duration-300">
+            <i class="fas fa-users text-5xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2 text-center">Micro Influencers</h3>
+          <p class="text-gray-600 text-center mb-4">10K - 100K Followers</p>
+          <div class="text-sm text-gray-500 text-center">
+            Strong community engagement<br>
+            Cost-effective partnerships<br>
+            Targeted reach
+          </div>
+        </div>
+
+        <!-- Macro Influencers -->
+        <div class="group bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+          <div class="text-primary-600 mb-6 text-center group-hover:scale-110 transition-transform duration-300">
+            <i class="fas fa-star text-5xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2 text-center">Macro Influencers</h3>
+          <p class="text-gray-600 text-center mb-4">100K - 1M Followers</p>
+          <div class="text-sm text-gray-500 text-center">
+            Wide reach<br>
+            Professional content<br>
+            Established credibility
+          </div>
+        </div>
+
+        <!-- Mega Influencers -->
+        <div class="group bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+          <div class="text-primary-600 mb-6 text-center group-hover:scale-110 transition-transform duration-300">
+            <i class="fas fa-crown text-5xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2 text-center">Mega Influencers</h3>
+          <p class="text-gray-600 text-center mb-4">1M+ Followers</p>
+          <div class="text-sm text-gray-500 text-center">
+            Massive reach<br>
+            Celebrity status<br>
+            Brand authority
+          </div>
+        </div>
+      </div>
+
+      <!-- Categories -->
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div class="bg-gray-50 rounded-lg p-4 text-center hover:bg-primary-50 transition-colors duration-300">
+          <i class="fas fa-dumbbell text-primary-600 text-2xl mb-2"></i>
+          <p class="font-medium">Fitness</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 text-center hover:bg-primary-50 transition-colors duration-300">
+          <i class="fas fa-tshirt text-primary-600 text-2xl mb-2"></i>
+          <p class="font-medium">Fashion</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 text-center hover:bg-primary-50 transition-colors duration-300">
+          <i class="fas fa-utensils text-primary-600 text-2xl mb-2"></i>
+          <p class="font-medium">Food</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 text-center hover:bg-primary-50 transition-colors duration-300">
+          <i class="fas fa-baby text-primary-600 text-2xl mb-2"></i>
+          <p class="font-medium">Parenting</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 text-center hover:bg-primary-50 transition-colors duration-300">
+          <i class="fas fa-laptop text-primary-600 text-2xl mb-2"></i>
+          <p class="font-medium">Technology</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 text-center hover:bg-primary-50 transition-colors duration-300">
+          <i class="fas fa-paint-brush text-primary-600 text-2xl mb-2"></i>
+          <p class="font-medium">Lifestyle</p>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center">
+        <a href="#contact_form" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 transition-colors duration-300">
+          Find Your Perfect Match
+          <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+</htmlCode></section>
+<section id="section-37e55381-8295-4e59-8426-175e4b52ae3c"><htmlCode>
+<div id="root">
+  <section id="case_studies" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl font-heading">
+          Success Stories
+        </h2>
+        <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+          Real results from our influencer marketing campaigns
+        </p>
+      </div>
+
+      <!-- Case Studies Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <!-- Case Study 1 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+          <div class="relative h-48 bg-gradient-to-r from-primary-500 to-primary-600">
+            <div class="absolute inset-0 flex items-center justify-center text-white">
+              <i class="fas fa-shopping-bag text-6xl opacity-20"></i>
+            </div>
+            <div class="absolute bottom-4 left-4 text-white">
+              <h4 class="font-bold text-lg">Fashion Brand</h4>
+              <p class="text-primary-100">Instagram Campaign</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-sm text-gray-500">3 Month Campaign</span>
+              <span class="text-primary-600 font-semibold">450% ROI</span>
+            </div>
+            <div class="space-y-3">
+              <p class="text-gray-600">15 influencers collaborated to showcase seasonal collection</p>
+              <div class="flex items-center space-x-4 text-sm text-gray-500">
+                <span class="flex items-center">
+                  <i class="fas fa-eye mr-2 text-primary-600"></i>
+                  2.5M Reach
+                </span>
+                <span class="flex items-center">
+                  <i class="fas fa-shopping-cart mr-2 text-primary-600"></i>
+                  12K Sales
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case Study 2 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+          <div class="relative h-48 bg-gradient-to-r from-accent-500 to-accent-600">
+            <div class="absolute inset-0 flex items-center justify-center text-white">
+              <i class="fas fa-utensils text-6xl opacity-20"></i>
+            </div>
+            <div class="absolute bottom-4 left-4 text-white">
+              <h4 class="font-bold text-lg">Restaurant Chain</h4>
+              <p class="text-accent-100">TikTok Campaign</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-sm text-gray-500">1 Month Campaign</span>
+              <span class="text-primary-600 font-semibold">300% ROI</span>
+            </div>
+            <div class="space-y-3">
+              <p class="text-gray-600">Viral food challenge with 25 food influencers</p>
+              <div class="flex items-center space-x-4 text-sm text-gray-500">
+                <span class="flex items-center">
+                  <i class="fas fa-play mr-2 text-primary-600"></i>
+                  5M Views
+                </span>
+                <span class="flex items-center">
+                  <i class="fas fa-store mr-2 text-primary-600"></i>
+                  35% Traffic Increase
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case Study 3 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+          <div class="relative h-48 bg-gradient-to-r from-secondary-500 to-secondary-600">
+            <div class="absolute inset-0 flex items-center justify-center text-white">
+              <i class="fas fa-dumbbell text-6xl opacity-20"></i>
+            </div>
+            <div class="absolute bottom-4 left-4 text-white">
+              <h4 class="font-bold text-lg">Fitness App</h4>
+              <p class="text-secondary-100">Multi-Platform Campaign</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-sm text-gray-500">6 Month Campaign</span>
+              <span class="text-primary-600 font-semibold">275% ROI</span>
+            </div>
+            <div class="space-y-3">
+              <p class="text-gray-600">Fitness challenge across Instagram and YouTube</p>
+              <div class="flex items-center space-x-4 text-sm text-gray-500">
+                <span class="flex items-center">
+                  <i class="fas fa-download mr-2 text-primary-600"></i>
+                  50K Downloads
+                </span>
+                <span class="flex items-center">
+                  <i class="fas fa-user-plus mr-2 text-primary-600"></i>
+                  30K Subscribers
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonials Carousel -->
+      <div class="max-w-4xl mx-auto" x-data="{ activeSlide: 1 }">
+        <div class="relative bg-white rounded-xl shadow-lg p-8 mt-8">
+          <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <div class="bg-primary-600 rounded-full p-3">
+              <i class="fas fa-quote-right text-white text-xl"></i>
+            </div>
+          </div>
+          
+          <!-- Testimonial 1 -->
+          <div x-show="activeSlide === 1" class="space-y-4">
+            <p class="text-gray-600 text-lg italic text-center">"Working with Viralfluencer transformed our social media presence. The ROI exceeded our expectations and the team was incredibly professional throughout."</p>
+            <div class="text-center">
+              <p class="font-semibold text-gray-900">Sarah Johnson</p>
+              <p class="text-sm text-gray-500">Marketing Director, Fashion Brand</p>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div x-show="activeSlide === 2" class="space-y-4" style="display: none;">
+            <p class="text-gray-600 text-lg italic text-center">"The influencer matching process was spot-on. Every collaboration felt authentic and delivered amazing results for our brand."</p>
+            <div class="text-center">
+              <p class="font-semibold text-gray-900">Mike Chen</p>
+              <p class="text-sm text-gray-500">CEO, Tech Startup</p>
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <div class="flex justify-center space-x-2 mt-6">
+            <button @click="activeSlide = 1" class="w-3 h-3 rounded-full transition-colors duration-300" :class="activeSlide === 1 ? 'bg-primary-600' : 'bg-gray-300'"></button>
+            <button @click="activeSlide = 2" class="w-3 h-3 rounded-full transition-colors duration-300" :class="activeSlide === 2 ? 'bg-primary-600' : 'bg-gray-300'"></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center">
+        <a href="#contact_form" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 transition-colors duration-300">
+          Start Your Success Story
+          <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+</htmlCode></section>
+<section id="section-739cd9c4-732d-4dbd-bc3e-5b71296133be"><htmlCode>
+<div id="root">
+  <section id="testimonials" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl font-heading">
+          What Our Partners Say
+        </h2>
+        <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+          Hear from brands and influencers who have achieved success with Viralfluencer
+        </p>
+      </div>
+
+      <!-- Testimonials Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8" x-data="{ activeTestimonial: 1 }">
+        <!-- Testimonial Cards -->
+        <template x-for="i in 3">
+          <div class="bg-white rounded-xl shadow-lg p-8 relative group hover:shadow-xl transition-all duration-300">
+            <div class="absolute -top-4 left-8">
+              <div class="bg-primary-600 rounded-full p-2">
+                <i class="fas fa-quote-right text-white text-lg"></i>
+              </div>
+            </div>
+            
+            <div class="pt-4">
+              <div class="mb-6">
+                <div class="flex items-center mb-1">
+                  <div class="text-primary-600">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+              </div>
+              
+              <blockquote class="text-gray-600 mb-6">
+                <p class="italic">"The results we achieved through Viralfluencer's campaign management were outstanding. Our brand reach grew exponentially, and the ROI exceeded our expectations."</p>
+              </blockquote>
+              
+              <div class="flex items-center">
+                <div class="flex-1">
+                  <h4 class="font-bold text-gray-900">Emma Thompson</h4>
+                  <p class="text-sm text-gray-500">Marketing Director, Beauty Brand</p>
+                </div>
+                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 flex items-center justify-center">
+                  <i class="fas fa-user text-white text-xl"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+
+      <!-- Carousel Navigation -->
+      <div class="flex justify-center space-x-2 mt-8">
+        <button class="w-3 h-3 rounded-full bg-primary-600"></button>
+        <button class="w-3 h-3 rounded-full bg-gray-300 hover:bg-primary-400 transition-colors duration-300"></button>
+        <button class="w-3 h-3 rounded-full bg-gray-300 hover:bg-primary-400 transition-colors duration-300"></button>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="mt-16 text-center">
+        <a href="#contact_form" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 transition-colors duration-300">
+          Join Our Success Stories
+          <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+</htmlCode></section>
+<section id="section-7ef8c36e-fbc7-4b5a-9d29-a4cc5ed3ee39"><htmlCode>
+<div id="root">
+  <section id="contact_form" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl font-heading">
+            Let's Grow Together
+          </h2>
+          <p class="mt-4 text-xl text-gray-600">
+            Ready to amplify your brand's influence? Get in touch with us today.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg p-8 md:p-12">
+          <form x-data="{ loading: false, success: false }" @submit.prevent="loading = true; setTimeout(() => { loading = false; success = true; }, 1000)" class="space-y-6">
+            <!-- Name Fields -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="firstName" class="block text-sm font-medium text-gray-700">First Name</label>
+                <input type="text" id="firstName" name="firstName" required
+                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500">
+              </div>
+              <div>
+                <label for="lastName" class="block text-sm font-medium text-gray-700">Last Name</label>
+                <input type="text" id="lastName" name="lastName" required
+                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500">
+              </div>
+            </div>
+
+            <!-- Contact Fields -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                <input type="email" id="email" name="email" required
+                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500">
+              </div>
+              <div>
+                <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                <input type="tel" id="phone" name="phone"
+                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500">
+              </div>
+            </div>
+
+            <!-- Role Selection -->
+            <div>
+              <label for="role" class="block text-sm font-medium text-gray-700">I am a</label>
+              <select id="role" name="role" required
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500">
+                <option value="">Select your role</option>
+                <option value="brand">Brand looking for influencers</option>
+                <option value="influencer">Influencer looking for opportunities</option>
+                <option value="agency">Agency</option>
+              </select>
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700">Your Message</label>
+              <textarea id="message" name="message" rows="4" required
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="flex items-center justify-center">
+              <button type="submit" 
+                class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                :disabled="loading">
+                <span x-show="!loading">Let's Collaborate</span>
+                <span x-show="loading" class="flex items-center">
+                  <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Processing...
+                </span>
+              </button>
+            </div>
+
+            <!-- Success Message -->
+            <div x-show="success" 
+                 x-transition:enter="transition ease-out duration-300"
+                 x-transition:enter-start="opacity-0 transform scale-95"
+                 x-transition:enter-end="opacity-100 transform scale-100"
+                 class="text-center text-green-600 mt-4">
+              <i class="fas fa-check-circle text-xl mr-2"></i>
+              Thank you! We'll get back to you shortly.
+            </div>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div>
+            <div class="flex items-center justify-center w-12 h-12 mx-auto bg-primary-100 rounded-full">
+              <i class="fas fa-envelope text-primary-600 text-xl"></i>
+            </div>
+            <h3 class="mt-4 text-lg font-medium text-gray-900">Email Us</h3>
+            <p class="mt-2 text-base text-gray-600">
+              hello@viralfluencer.com
+            </p>
+          </div>
+          <div>
+            <div class="flex items-center justify-center w-12 h-12 mx-auto bg-primary-100 rounded-full">
+              <i class="fas fa-phone text-primary-600 text-xl"></i>
+            </div>
+            <h3 class="mt-4 text-lg font-medium text-gray-900">Call Us</h3>
+            <p class="mt-2 text-base text-gray-600">
+              +1 (555) 123-4567
+            </p>
+          </div>
+          <div>
+            <div class="flex items-center justify-center w-12 h-12 mx-auto bg-primary-100 rounded-full">
+              <i class="fas fa-map-marker-alt text-primary-600 text-xl"></i>
+            </div>
+            <h3 class="mt-4 text-lg font-medium text-gray-900">Visit Us</h3>
+            <p class="mt-2 text-base text-gray-600">
+              123 Influencer Street<br>
+              Digital City, DC 12345
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</htmlCode></section>
+<section id="section-3da08c86-518e-4238-ac69-b4872a6ebc50"><htmlCode>
+<div id="root">
+  <footer id="footer" class="bg-gray-900 text-gray-300">
+    <!-- Newsletter Section -->
+    <div class="border-b border-gray-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="max-w-3xl mx-auto text-center">
+          <h3 class="text-2xl font-bold text-white mb-4">Subscribe to Our Newsletter</h3>
+          <p class="text-gray-400 mb-8">Stay updated with the latest trends in influencer marketing</p>
+          <form class="flex flex-col sm:flex-row gap-4 justify-center" x-data="{ subscribed: false }" @submit.prevent="subscribed = true">
+            <input type="email" placeholder="Enter your email" required
+              class="flex-1 max-w-md px-4 py-2 rounded-md bg-gray-800 border border-gray-700 focus:border-primary-500 focus:ring-primary-500">
+            <button type="submit" class="px-6 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition-colors duration-300">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Footer Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
+        <!-- Company Info -->
+        <div class="col-span-1">
+          <h2 class="text-2xl font-bold text-white mb-4">Viralfluencer</h2>
+          <p class="text-gray-400 mb-6">Connecting brands with influential voices to create impactful marketing campaigns.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-primary-500 transition-colors">
+              <i class="fab fa-facebook-f text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-primary-500 transition-colors">
+              <i class="fab fa-twitter text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-primary-500 transition-colors">
+              <i class="fab fa-instagram text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-primary-500 transition-colors">
+              <i class="fab fa-linkedin-in text-xl"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-span-1">
+          <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+          <ul class="space-y-3">
+            <li><a href="#about" class="text-gray-400 hover:text-primary-500 transition-colors">About Us</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-primary-500 transition-colors">Services</a></li>
+            <li><a href="#case_studies" class="text-gray-400 hover:text-primary-500 transition-colors">Case Studies</a></li>
+            <li><a href="#contact_form" class="text-gray-400 hover:text-primary-500 transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal -->
+        <div class="col-span-1">
+          <h3 class="text-lg font-semibold text-white mb-4">Legal</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-400 hover:text-primary-500 transition-colors">Privacy Policy</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-primary-500 transition-colors">Terms of Service</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-primary-500 transition-colors">Cookie Policy</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-primary-500 transition-colors">Disclaimer</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-span-1">
+          <h3 class="text-lg font-semibold text-white mb-4">Contact Us</h3>
+          <ul class="space-y-3">
+            <li class="flex items-center space-x-3">
+              <i class="fas fa-envelope text-primary-500"></i>
+              <span>hello@viralfluencer.com</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i class="fas fa-phone text-primary-500"></i>
+              <span>+1 (555) 123-4567</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i class="fas fa-map-marker-alt text-primary-500"></i>
+              <span>123 Influencer Street<br>Digital City, DC 12345</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="border-t border-gray-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-400 text-sm">© 2024 Viralfluencer. All rights reserved.</p>
+          <div class="flex space-x-6 mt-4 md:mt-0">
+            <a href="#" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Privacy</a>
+            <a href="#" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Terms</a>
+            <a href="#" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+</htmlCode></section>
+</body>
+</html>
