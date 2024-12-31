@@ -1,7 +1,7 @@
 import React from 'react';
 import { FiTrendingUp, FiUsers, FiSettings } from 'react-icons/fi'; // Feather Icons
 import FeatureCard from './FeatureCard';
-
+   
 const AboutSection = () => (
   <section id="about" className="fade-in p-4 bg-gray-50">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
