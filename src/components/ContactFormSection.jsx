@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import ButtonContainer from './ButtonContainer';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { FaCheckCircle } from 'react-icons/fa';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +15,8 @@ const ContactForm = () => {
     message: '',
   });
 
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -21,15 +26,36 @@ const ContactForm = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://127.0.0.1:5000/submit-form', formData);
+      const response = await axios.post('https://viralfluencerbackend.onrender.com/submit-form', formData);
       console.log('Response from server:', response.data);
-      alert('Form submitted successfully!');
+      toast.success('You will Recive a call from our team soon');
+      setIsSubmitted(true);
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('There was an error submitting the form. Please try again.');
+      toast.error('There was an error submitting the form. Please try again.');
     }
   };
-
+  if (isSubmitted) {
+    return (
+      <section className="py-20 bg-green-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <FaCheckCircle className="text-green-500 text-6xl mx-auto" />
+          <h2 className="text-3xl font-bold text-gray-900 mt-4">
+            Thank You for Reaching Out!
+          </h2>
+          <p className="text-gray-700 mt-2">
+            We appreciate your interest and will get back to you shortly.
+          </p>
+          <button
+            className="mt-6 px-6 py-3 bg-blue-500 text-white font-bold rounded-md shadow-md hover:bg-blue-600 transition"
+            onClick={() => setIsSubmitted(false)}
+          >
+            Submit Another Response
+          </button>
+        </div>
+      </section>
+    );
+  }
   return (
     <section id="contact_form" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
