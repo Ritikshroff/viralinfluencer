@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ButtonContainer from './ButtonContainer';
+import axios from 'axios';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -16,10 +17,17 @@ const ContactForm = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form submitted:', formData);
+
+    try {
+      const response = await axios.post('http://127.0.0.1:5000/submit-form', formData);
+      console.log('Response from server:', response.data);
+      alert('Form submitted successfully!');
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('There was an error submitting the form. Please try again.');
+    }
   };
 
   return (
@@ -113,12 +121,9 @@ const ContactForm = () => {
               required
             />
           </div>
-          <button type="submit" className="w-full bg-primary-600 text-white py-2 rounded-md hover:bg-primary-700">
-            Send
-          </button>
+          <ButtonContainer type="submit" name="Let's Colaborate" />
         </form>
       </div>
-      <ButtonContainer name="Let's Colaborate" />
 
     </section>
 

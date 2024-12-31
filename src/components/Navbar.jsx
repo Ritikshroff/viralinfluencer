@@ -15,7 +15,7 @@ const Navbar = ({ isOpen, setIsOpen }) => (
           <NavLink href="#services" label="Services" />
           <NavLink href="#influencer_categories" label="Influencers" />
           <NavLink href="#case_studies" label="Case Studies" />
-          <NavLink href="#contact_form" label="Contact Us" />
+          <NavLink href="submit-form" label="Contact Us" />
         </div>
 
         {/* Mobile Menu Button */}
