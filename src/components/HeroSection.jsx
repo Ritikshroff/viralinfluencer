@@ -20,7 +20,7 @@ const HeroSection = () => {
             Connect with the perfect influencers for your brand and <br /> create impactful marketing campaigns that drive real results..
           </p>
           <a
-            href="#contact_form"
+            href="/submit-form"
             className="inline-block px-6 py-3 bg-[#2269a1] text-white font-semibold rounded-lg hover:bg-[#4e7683] transition duration-300"
           >
             Book a Consultation

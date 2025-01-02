@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { FaCheckCircle } from 'react-icons/fa';
 import HighlightedSection from '../HighlightedSection';
 
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -17,6 +18,7 @@ const ContactForm = () => {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,6 +27,7 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
 
     try {
       const response = await axios.post('https://viralfluencerbackend.onrender.com/submit-form', formData);
@@ -34,6 +37,8 @@ const ContactForm = () => {
     } catch (error) {
       console.error('Error submitting form:', error);
       toast.error('There was an error submitting the form. Please try again.');
+    } finally {
+      setIsLoading(false); // Stop the spinner
     }
   };
   if (isSubmitted) {
@@ -148,10 +153,14 @@ const ContactForm = () => {
               required
             />
           </div>
-          <ButtonContainer type="submit" name="Let's Colaborate" />
+          <ButtonContainer
+            type="submit"
+            name={isLoading ? "Submitting..." : "Start Your Journey →"}
+            disabled={isLoading} // Disable the button while loading
+          />
         </form>
       </div>
-    <HighlightedSection/>
+      <HighlightedSection />
     </section>
   );
 };

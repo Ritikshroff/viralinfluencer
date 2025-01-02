@@ -34,7 +34,9 @@ function HighlightedSection() {
           </div>
         </div>
         <button className="mt-4 md:mt-0 px-4 py-2 text-white bg-[#2269a1] rounded-md">
-          Start Your Campaign
+          <a href="/submit-form">
+            Start Your Campaign
+          </a>
         </button>
       </div>
     </div>
