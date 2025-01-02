@@ -1,4 +1,5 @@
 import React from 'react';
+import HighlightedSection from '../HighlightedSection';
 
 const ServicesSection = () => (
   <section id="services" className="py-20">
@@ -50,6 +51,7 @@ const ServicesSection = () => (
         />
       </div>
     </div>
+    <HighlightedSection/>
   </section>
 );
 

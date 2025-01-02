@@ -11,11 +11,11 @@ const Navbar = ({ isOpen, setIsOpen }) => (
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
-          <NavLink href="#" label="Home" />
-          <NavLink href="#services" label="Services" />
-          <NavLink href="#influencer_categories" label="Influencers" />
+          <NavLink href="/" label="Home" />
+          <NavLink href="/Services" label="Services" />
+          <NavLink href="/Influencer" label="Influencers" />
           <NavLink href="#case_studies" label="Case Studies" />
-          <NavLink href="submit-form" label="Contact Us" />
+          <NavLink href="/submit-form" label="Contact Us" />
         </div>
 
         {/* Mobile Menu Button */}

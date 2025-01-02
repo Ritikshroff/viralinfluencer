@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import ButtonContainer from './ButtonContainer';
+import ButtonContainer from '../ButtonContainer';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaCheckCircle } from 'react-icons/fa';
+import HighlightedSection from '../HighlightedSection';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -150,9 +151,8 @@ const ContactForm = () => {
           <ButtonContainer type="submit" name="Let's Colaborate" />
         </form>
       </div>
-
+    <HighlightedSection/>
     </section>
-
   );
 };
 

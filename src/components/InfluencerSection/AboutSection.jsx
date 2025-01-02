@@ -1,6 +1,7 @@
 import React from 'react';
 import { FiTrendingUp, FiUsers, FiSettings } from 'react-icons/fi'; // Feather Icons
-import FeatureCard from './FeatureCard';
+import FeatureCard from '../FeatureCard';
+import HighlightedSection from '../HighlightedSection';
    
 const AboutSection = () => (
   <section id="about" className="fade-in p-4 bg-gray-50">
@@ -32,6 +33,7 @@ const AboutSection = () => (
         />
       </div>
     </div>
+    <HighlightedSection/>
   </section>
 );
 
