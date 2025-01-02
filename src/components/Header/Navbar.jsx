@@ -39,44 +39,37 @@ const Navbar = ({ isOpen, setIsOpen }) => (
       </div>
     </div>
 
-    {/* Mobile Menu */}
-    {/* {isOpen && (
-      <div className="md:hidden bg-white shadow-lg">
-        <div className="px-4 py-4 space-y-2">
-          <NavLink href="#" label="Home" />
-          <NavLink href="#services" label="Services" />
-          <NavLink href="#influencer_categories" label="Influencers" />
-          <NavLink href="#case_studies" label="Case Studies" />
-          <NavLink href="#contact_form" label="Contact Us" />
-        </div>
-      </div>
-    )} */}
-
 {isOpen && (
         <div className="md:hidden">
           <a
-            href="#"
+            href="/"
             className="block px-4 py-2 text-[#555555] hover:text-[#0047FF] transition duration-300"
           >
             Home
           </a>
           <a
-            href="#"
-            className="block px-4 py-2 text-[#555555] hover:text-[#0047FF] transition duration-300"
-          >
-            About
-          </a>
-          <a
-            href="#"
+            href="/Services"
             className="block px-4 py-2 text-[#555555] hover:text-[#0047FF] transition duration-300"
           >
             Services
           </a>
           <a
-            href="#"
+            href="/Influencer"
             className="block px-4 py-2 text-[#555555] hover:text-[#0047FF] transition duration-300"
           >
-            Contact
+            Influencers
+          </a>
+          <a
+            href="#case_studies"
+            className="block px-4 py-2 text-[#555555] hover:text-[#0047FF] transition duration-300"
+          >
+            Case Studies
+          </a>
+          <a
+            href="/submit-form"
+            className="block px-4 py-2 text-[#555555] hover:text-[#0047FF] transition duration-300"
+          >
+            Contact Us
           </a>
         </div>
       )}
