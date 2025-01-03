@@ -1,5 +1,6 @@
 import React from 'react';
 import HighlightedSection from '../HighlightedSection';
+import { GrDocumentPerformance   } from "react-icons/gr";
 
 const ServicesSection = () => (
   <section id="services" className="py-20">
@@ -31,7 +32,7 @@ const ServicesSection = () => (
         />
         <ServiceCard
           title="Performance Analytics"
-          icon={<svg className="w-12 h-12 text-[#2269a1]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>}
+          icon={ <GrDocumentPerformance  className="w-12 h-12 text-[#2269a1]" fill="none" stroke="currentColor" viewBox="0 0 24 24"/> }
           description="In-depth analytics to measure the success of your campaigns and optimize future strategies."
           features={[
             'Real-time Reporting',
@@ -41,7 +42,19 @@ const ServicesSection = () => (
         />
         <ServiceCard
           title="Brand Partnerships"
-          icon={<svg className="w-12 h-12 text-[#2269a1]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h18v18H3V3z" /></svg>}
+          icon={
+            <svg
+              className="w-12 h-12 text-[#2269a1]"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="9" cy="12" r="5" stroke="currentColor" strokeWidth="2" />
+              <circle cx="15" cy="12" r="5" stroke="currentColor" strokeWidth="2" />
+              <line x1="9" y1="12" x2="15" y2="12" stroke="currentColor" strokeWidth="2" />
+            </svg>
+          }
           description="Building long-term partnerships with influencers to create authentic brand stories."
           features={[
             'Long-term Collaborations',

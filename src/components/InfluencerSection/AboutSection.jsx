@@ -2,7 +2,6 @@ import React from 'react';
 import { FiTrendingUp, FiUsers, FiSettings } from 'react-icons/fi'; // Feather Icons
 import FeatureCard from '../FeatureCard';
 import HighlightedSection from '../HighlightedSection';
-
    
 const AboutSection = () => (
   <section id="about" className="fade-in p-4 bg-gray-50">
@@ -14,27 +13,42 @@ const AboutSection = () => (
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <FeatureCard 
+      <FeatureCard 
           icon={<FiTrendingUp />} 
           title="Proven Brand Growth" 
           description="Drive measurable results with data-driven influencer campaigns that align with your brand goals and target audience."
           stat="300%+"
-          points={"Database Analysis"}
+          points={[
+            "Database Analysis",
+            "Growth Strategy",
+            "Campaign Optimization"
+          ]}
         />
         <FeatureCard 
           icon={<FiUsers />} 
           title="Perfect Influencer Matches" 
           description="Access our curated network of authentic influencers who align with your brand values and target audience."
           stat="10K+"
+          points={[
+            "Curated Network",
+            "Authentic Connections",
+            "Targeted Matches"
+          ]}
         />
         <FeatureCard 
           icon={<FiSettings />} 
           title="End-to-End Campaign Management" 
           description="From strategy to execution and reporting, we handle every aspect of your influencer marketing campaigns."
           stat="100%"
+          points={[
+            "Full Strategy",
+            "Execution Support",
+            "Comprehensive Reporting"
+          ]}
         />
       </div>
     </div>
+  
     <HighlightedSection/>
   </section>
 );
