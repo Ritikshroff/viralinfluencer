@@ -14,6 +14,7 @@ import SignupFormBrand from './components/Signup/SignUpBrand.jsx'
 import SignupFormPartner from './components/Signup/SignUpPartner.jsx'
 import SignupFormagency from './components/Signup/SignUpAgency.jsx'
 import SignupFormInfluencer from './components/Signup/SignupFormInfluencer.jsx'
+import LoginForm from './components/Login/LoginForm.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,6 +28,7 @@ const router = createBrowserRouter(
       <Route path = '/signup/brand' element = {<SignupFormBrand/>}/>
       <Route path = '/signup/partner' element = {<SignupFormPartner/>}/>
       <Route path = '/signup/agency' element = {<SignupFormagency/>}/>
+      <Route path = '/login' element = {<LoginForm/>}/>
     </Route>
   )
 )

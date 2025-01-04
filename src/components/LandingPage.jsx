@@ -14,7 +14,7 @@ const LandingPage = () => {
             key={role}
             onClick={() => navigate(`/signup/${role.toLowerCase()}`)}
             className="bg-[#2269a1] hover:bg-[#2e70a1] text-white font-bold py-2 px-4 rounded"
-            {...role === "Agency"  ? { disabled: true } : {}}  {...role === "Partner"  ? { disabled: true } : {}}
+            // {...role === "Agency"  ? { disabled: true } : {}}  {...role === "Partner"  ? { disabled: true } : {}}
           >
             {role}
           </button>
