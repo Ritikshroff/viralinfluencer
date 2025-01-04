@@ -45,7 +45,7 @@ const SignupFormPartner = () => {
 
     try {
       const response = await axios.post(
-        "https://yourbackendurl.com/signup/partner", // Replace with actual API URL
+        "https://viralfluencerbackend.onrender.com/signup/partner", // Replace with actual API URL
         formData
       );
       navigate("/login");
