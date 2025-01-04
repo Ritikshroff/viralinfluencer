@@ -16,6 +16,8 @@ const Navbar = ({ isOpen, setIsOpen }) => (
           <NavLink href="/Influencer" label="Influencers" />
           <NavLink href="#case_studies" label="Case Studies" />
           <NavLink href="/submit-form" label="Contact Us" />
+          <NavLink href="/signup" label="Signup" />
+          <NavLink href="#" label="Login" />
         </div>
 
         {/* Mobile Menu Button */}
@@ -43,33 +45,45 @@ const Navbar = ({ isOpen, setIsOpen }) => (
         <div className="md:hidden">
           <a
             href="/"
-            className="block px-4 py-2 text-[#555555] hover:text-[#0047FF] transition duration-300"
+            className="block px-4 py-2 text-[#555555] hover:text-[#2e70a1] transition duration-300"
           >
             Home
           </a>
           <a
             href="/Services"
-            className="block px-4 py-2 text-[#555555] hover:text-[#0047FF] transition duration-300"
+            className="block px-4 py-2 text-[#555555] hover:text-[#2e70a1] transition duration-300"
           >
             Services
           </a>
           <a
             href="/Influencer"
-            className="block px-4 py-2 text-[#555555] hover:text-[#0047FF] transition duration-300"
+            className="block px-4 py-2 text-[#555555] hover:text-[#2e70a1] transition duration-300"
           >
             Influencers
           </a>
           <a
             href="#case_studies"
-            className="block px-4 py-2 text-[#555555] hover:text-[#0047FF] transition duration-300"
+            className="block px-4 py-2 text-[#555555] hover:text-[#2e70a1] transition duration-300"
           >
             Case Studies
           </a>
           <a
             href="/submit-form"
-            className="block px-4 py-2 text-[#555555] hover:text-[#0047FF] transition duration-300"
+            className="block px-4 py-2 text-[#555555] hover:text-[#2e70a1] transition duration-300"
           >
             Contact Us
+          </a>
+          <a
+            href=""
+            className="block px-4 py-2 text-[#555555] hover:text-[#2e70a1] transition duration-300"
+          >
+            Signup
+          </a>
+          <a
+            href=""
+            className="block px-4 py-2 text-[#555555] hover:text-[#2e70a1] transition duration-300"
+          >
+            Login
           </a>
         </div>
       )}

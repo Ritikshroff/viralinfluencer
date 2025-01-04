@@ -5,7 +5,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaCheckCircle } from 'react-icons/fa';
 import HighlightedSection from '../HighlightedSection';
-import { useSpring, animated } from 'react-spring';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -15,13 +14,6 @@ const ContactForm = () => {
     phoneNumber: '',
     role: '',
     message: '',
-  });
-
-  const dotAnimation = useSpring({
-    loop: { reverse: true },
-    from: { transform: 'translateY(-200px)' },
-    to: { transform: 'translateY(200px)' },
-    config: { tension: 250, friction: 20 },
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -167,22 +159,6 @@ const ContactForm = () => {
           />
         </form>
       </div>
-      {/* Dots Animation */}
-              <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center z-0">
-                {[...Array(15)].map((_, index) => (
-                  <animated.div
-                    key={index}
-                    className="w-4 h-4 rounded-full bg-[#2269a1] absolute"
-                    style={{
-                      ...dotAnimation,
-                      animationDelay: `${Math.random() * 5}s`, // Random delay to make each dot animate differently
-                      top: `${Math.random() * 100}%`, // Random top position
-                      left: `${Math.random() * 100}%`, // Random left position
-                      opacity: 0.7 + Math.random() * 0.3, // Random opacity for a dynamic effect
-                    }}
-                  />
-                ))}
-              </div>
       <HighlightedSection />
     </section>
   );

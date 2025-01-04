@@ -6,21 +6,21 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-10">
       {/* Contact, Call, Visit */}
-      {/* <div className="container mx-auto px-6 lg:px-20 flex flex-wrap justify-between border-b border-gray-700 pb-10">
+      <div className="container mx-auto px-6 lg:px-20 flex flex-wrap justify-between border-b border-gray-700 pb-10">
         <div className="w-full sm:w-1/3 text-center mb-6 sm:mb-0">
           <h4 className="text-lg font-semibold mb-2">Email Us</h4>
-          <p className="text-gray-400">hello@viralfluencer.com</p>
+          <p className="text-gray-400">viralfluencer@gmail.com</p>
         </div>
         <div className="w-full sm:w-1/3 text-center mb-6 sm:mb-0">
           <h4 className="text-lg font-semibold mb-2">Call Us</h4>
-          <p className="text-gray-400">+1 (555) 123-4567</p>
+          <p className="text-gray-400">+91 9555325902</p>
         </div>
         <div className="w-full sm:w-1/3 text-center">
           <h4 className="text-lg font-semibold mb-2">Visit Us</h4>
-          <p className="text-gray-400">123 Influencer Street</p>
-          <p className="text-gray-400">Digital City, DC 12345</p>
+          <p className="text-gray-400">Dundahera Gurugram</p>
+          <p className="text-gray-400">Near Cyber City, 122016</p>
         </div>
-      </div> */}
+      </div>
 
       {/* Newsletter Section */}
       <div className="text-center p-6">
@@ -34,7 +34,7 @@ const Footer = () => {
           />
           <button
             type="submit"
-            className="bg-blue-500 hover:bg-blue-600 text-white px-4 rounded-r-md"
+            className="bg-[#2269a1] hover:bg-blue-600 text-white px-4 rounded-r-md"
           >
             Subscribe
           </button>
