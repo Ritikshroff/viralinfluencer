@@ -1,13 +1,13 @@
 import React from 'react';
-import { useSpring, animated } from 'react-spring';
+// import { useSpring, animated } from 'react-spring';
 
 const HeroSection = () => {
-  const dotAnimation = useSpring({
-    loop: { reverse: true },
-    from: { transform: 'translateY(-200px)' },
-    to: { transform: 'translateY(200px)' },
-    config: { tension: 250, friction: 20 },
-  });
+  // const dotAnimation = useSpring({
+  //   loop: { reverse: true },
+  //   from: { transform: 'translateY(-200px)' },
+  //   to: { transform: 'translateY(200px)' },
+  //   config: { tension: 250, friction: 20 },
+  // });
 
   return (
     <section className="relative bg-white w-full h-[500px] items-left p-2 overflow-hidden">
@@ -33,7 +33,7 @@ const HeroSection = () => {
         </div>
 
         {/* Dots Animation */}
-        <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center z-0">
+        {/* <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center z-0">
           {[...Array(10)].map((_, index) => (
             <animated.div
               key={index}
@@ -47,7 +47,7 @@ const HeroSection = () => {
               }}
             />
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

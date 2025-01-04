@@ -74,7 +74,7 @@ const Navbar = ({ isOpen, setIsOpen }) => (
             Contact Us
           </a>
           <a
-            href=""
+            href="/signup"
             className="block px-4 py-2 text-[#555555] hover:text-[#2e70a1] transition duration-300"
           >
             Signup
