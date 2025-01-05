@@ -53,7 +53,7 @@ const LoginForm = () => {
         "https://viralfluencerbackend.onrender.com/login",
         formData
       );
-      navigate("/home");
+      navigate("/");
     } catch (error) {
       console.error("Error during signup:", error);
     }
