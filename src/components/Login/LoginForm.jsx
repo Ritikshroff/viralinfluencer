@@ -26,18 +26,35 @@ const LoginForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   if (!validateForm()) return;
+
+  //   // Submit form data to backend for authentication (mocked here)
+  //   try {
+  //     // Replace with actual authentication logic
+  //     console.log("Form submitted with:", formData);
+  //     navigate("/dashboard"); // Redirect to dashboard after successful login
+  //   } catch (error) {
+  //     console.error("Login error:", error);
+  //   }
+  // };
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!validateForm()) return;
 
-    // Submit form data to backend for authentication (mocked here)
     try {
-      // Replace with actual authentication logic
-      console.log("Form submitted with:", formData);
-      navigate("/dashboard"); // Redirect to dashboard after successful login
+      const response = await axios.post(
+        "https://viralfluencerbackend.onrender.com/login",
+        formData
+      );
+      navigate("/home");
     } catch (error) {
-      console.error("Login error:", error);
+      console.error("Error during signup:", error);
     }
   };
 

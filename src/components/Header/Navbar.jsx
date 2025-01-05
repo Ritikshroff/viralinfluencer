@@ -17,7 +17,7 @@ const Navbar = ({ isOpen, setIsOpen }) => (
           <NavLink href="#case_studies" label="Case Studies" />
           <NavLink href="/submit-form" label="Contact Us" />
           <NavLink href="/signup" label="Signup" />
-          <NavLink href="#" label="Login" />
+          <NavLink href="/login" label="Login" />
         </div>
 
         {/* Mobile Menu Button */}
@@ -80,7 +80,7 @@ const Navbar = ({ isOpen, setIsOpen }) => (
             Signup
           </a>
           <a
-            href=""
+            href="/login"
             className="block px-4 py-2 text-[#555555] hover:text-[#2e70a1] transition duration-300"
           >
             Login
