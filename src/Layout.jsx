@@ -23,7 +23,7 @@ import './App.css';
 import { Outlet } from 'react-router-dom';
 import Navbar from './components/Header/Navbar';
 import Footer from './components/Footer/Footer';
-
+// import TopNavBar from './components/Dashboard/TopNavBar';
 
 function Layout() {
     const [isOpen, setIsOpen] = useState(false);
@@ -37,24 +37,21 @@ function Layout() {
         } else {
             setIsLoggedIn(false); // Otherwise, they are not logged in
         }
-    }, [isLoggedIn]); // Empty dependency array to only run this on initial render
-    console.log(isLoggedIn);
-    
+    }, []); // Empty dependency array to only run this on initial render
 
     return (
         <div>
-            {/* {isLoggedIn ? (
-                null 
+            {/* Conditionally render Navbar based on the user's login status */}
+            {isLoggedIn ? (
+                null // Show the dashboard navbar if logged in
             ) : (
-                <Navbar isOpen={isOpen} setIsOpen={setIsOpen} /> 
+                <Navbar isOpen={isOpen} setIsOpen={setIsOpen} /> // Show the default navbar if not logged in
             )}
-            <Outlet /> 
-            {!isLoggedIn && <Footer />}  */}
 
-            {/* {isLoggedIn && null : <Navbar/>} */}
-            {isLoggedIn? null: <Navbar isOpen={isOpen} setIsOpen={setIsOpen}/>}
-            <Outlet/>
-            {isLoggedIn? null : <Footer/>}
+            <Outlet /> {/* Render child routes here */}
+
+            {/* Conditionally render Footer */}
+            {!isLoggedIn && <Footer />} {/* Only show Footer if the user is not logged in */}
         </div>
     );
 }
