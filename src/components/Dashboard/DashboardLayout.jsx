@@ -6,6 +6,7 @@ import DashboardContent from './DashboardContent'; // This is the main section w
 // import AnalyticsOverview from './Analyticsoverview';
 // import AnalyticsOverview from './Analyticsoverview';
 import CampaignDashboard from './CampaignDashboard';
+import Analytics from './Analytics';
 
 const DashboardLayout = ({ role }) => {
     return (
@@ -18,6 +19,7 @@ const DashboardLayout = ({ role }) => {
                 <DashboardContent />
                 {/* <AnalyticsOverview/> */}
                 {/* <AnalyticsOverview/> */}
+                <Analytics/>
                 <CampaignDashboard/>
             </div>
         </div>

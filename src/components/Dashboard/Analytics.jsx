@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
-const AnalyticsOverview = () => {
+const Analytics = () => {
   const [selectedPeriod, setSelectedPeriod] = useState('Daily');
 
   const handlePeriodChange = (period) => {
@@ -177,4 +177,4 @@ const MetricCard = ({ title, value, change, icon }) => {
   );
 };
 
-export default AnalyticsOverview;
+export default Analytics;

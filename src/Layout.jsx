@@ -37,7 +37,9 @@ function Layout() {
         } else {
             setIsLoggedIn(false); // Otherwise, they are not logged in
         }
-    }, []); // Empty dependency array to only run this on initial render
+    }, [isLoggedIn]); // Empty dependency array to only run this on initial render
+    console.log(isLoggedIn);
+    
 
     return (
         <div>
@@ -49,9 +51,10 @@ function Layout() {
             <Outlet /> 
             {!isLoggedIn && <Footer />}  */}
 
-            {!isLoggedIn && <Navbar/>}
+            {/* {isLoggedIn && null : <Navbar/>} */}
+            {isLoggedIn? null: <Navbar isOpen={isOpen} setIsOpen={setIsOpen}/>}
             <Outlet/>
-            {!isLoggedIn && <Footer/>}
+            {isLoggedIn? null : <Footer/>}
         </div>
     );
 }
