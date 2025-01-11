@@ -41,7 +41,7 @@ function Layout() {
 
     return (
         <div>
-            <Navbar/>
+            <Navbar isOpen={isOpen} setIsOpen={setIsOpen}/>
             <Outlet/>
             <Footer/>
         </div>
