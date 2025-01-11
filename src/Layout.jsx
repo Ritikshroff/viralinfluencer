@@ -41,17 +41,9 @@ function Layout() {
 
     return (
         <div>
-            {/* Conditionally render Navbar based on the user's login status */}
-            {isLoggedIn ? (
-                null // Show the dashboard navbar if logged in
-            ) : (
-                <Navbar isOpen={isOpen} setIsOpen={setIsOpen} /> // Show the default navbar if not logged in
-            )}
-
-            <Outlet /> {/* Render child routes here */}
-
-            {/* Conditionally render Footer */}
-            {!isLoggedIn && <Footer />} {/* Only show Footer if the user is not logged in */}
+            <Navbar/>
+            <Outlet/>
+            <Footer/>
         </div>
     );
 }
