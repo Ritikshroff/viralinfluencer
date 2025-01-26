@@ -18,6 +18,7 @@ import LoginForm from './components/Login/LoginForm.jsx'
 import DashboardLayout from './components/Dashboard/DashboardLayout.jsx'
 import BrandDashboard from './components/Dashboard/BrandDashboard.jsx'
 import InfluencerDashboard from './components/Dashboard/InfluencerDashboard.jsx'
+import InfluencerNiches from './components/InfluencerSection/InfluencerNiches.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -25,7 +26,7 @@ const router = createBrowserRouter(
       <Route path='/' element={<App />} />
       <Route path='/Services' element={<ServicesSection />} />
       <Route path='/submit-form' element={<ContactForm />} />
-      <Route path='/Influencer' element={<AboutSection />} />
+      <Route path='/Influencer' element={<InfluencerNiches />} />
       <Route path='/signup' element={<LandingPage />} />
       <Route path='/signup/influencer' element={<SignupFormInfluencer />} />
       <Route path='/signup/brand' element={<SignupFormBrand />} />

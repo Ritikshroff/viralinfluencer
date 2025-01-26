@@ -14,7 +14,7 @@ const Navbar = ({ isOpen, setIsOpen }) => (
           <NavLink href="/" label="Home" />
           <NavLink href="/Services" label="Services" />
           <NavLink href="/Influencer" label="Influencers" />
-          <NavLink href="#case_studies" label="Case Studies" />
+          <NavLink href="#case_studies" label="Case Studies" disabled/>
           <NavLink href="/submit-form" label="Contact Us" />
           {/* <ButtonContainer href="/signup" name='Signup' />
           <ButtonContainer href="/login" name='Login' /> */}
@@ -63,7 +63,7 @@ const Navbar = ({ isOpen, setIsOpen }) => (
         </a>
         <a
           href="#case_studies"
-          className="block px-4 py-2 text-[#555555] hover:text-[#2e70a1] transition duration-300"
+          className="block px-4 py-2 text-[#555555] hover:text-[#2e70a1] transition duration-300 opacity-50 pointer-events-none"
         >
           Case Studies
         </a>
@@ -82,10 +82,12 @@ const Navbar = ({ isOpen, setIsOpen }) => (
   </nav>
 );
 
-const NavLink = ({ href, label }) => (
+const NavLink = ({ href, label , disabled }) => (
   <a
     href={href}
-    className="text-gray-700 hover:text-blue-600 transition duration-300 font-medium"
+    className={`text-gray-700 hover:text-blue-600 transition duration-300 font-medium ${
+      disabled ? 'opacity-50 pointer-events-none' : '' 
+    }`}
   >
     {label}
   </a>
