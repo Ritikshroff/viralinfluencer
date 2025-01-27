@@ -33,9 +33,10 @@ const router = createBrowserRouter(
       <Route path='/signup/partner' element={<SignupFormPartner />} />
       <Route path='/signup/agency' element={<SignupFormagency />} />
       <Route path='/login' element={<LoginForm />} />
-      <Route path='/dashboard' element={<DashboardLayout />} />
-      <Route path="/dashboard/brand" element={<BrandDashboard />} />
-      <Route path="/dashboard/influencer" element={<InfluencerDashboard />} />
+      <Route path='/dashboard' element={<DashboardLayout />} >
+        <Route path="/dashboard/brand" element={<BrandDashboard />} />
+        <Route path="/dashboard/influencer" element={<InfluencerDashboard />} />
+      </Route>
     </Route>
   )
 )

@@ -1,48 +1,55 @@
 import React, { useState } from 'react';
-import { 
-  FaDumbbell, 
-  FaPlane, 
-  FaUtensils, 
-  FaCamera, 
-  FaHeart, 
-  FaGamepad, 
-  FaBrain, 
-  FaLaptop, 
-  FaMusic, 
-  FaHome 
-} from 'react-icons/fa'; 
+import {
+  FaDumbbell,
+  FaPlane,
+  FaUtensils,
+  FaCamera,
+  FaHeart,
+  FaGamepad,
+  FaBrain,
+  FaLaptop,
+  FaMusic,
+  FaHome
+} from 'react-icons/fa';
+import { Helmet } from "react-helmet";
+
 
 
 function InfluencerCard({ icon, title, description }) {
-  const IconComponent = 
+  const IconComponent =
     icon === 'fas fa-dumbbell' ? <FaDumbbell /> :
-    icon === 'fas fa-plane' ? <FaPlane /> :
-    icon === 'fas fa-utensils' ? <FaUtensils /> :
-    icon === 'fas fa-camera' ? <FaCamera /> :
-    icon === 'fas fa-heart' ? <FaHeart /> :
-    icon === 'fas fa-gamepad' ? <FaGamepad /> :
-    icon === 'fas fa-brain' ? <FaBrain /> :
-    icon === 'fas fa-laptop' ? <FaLaptop /> :
-    icon === 'fas fa-music' ? <FaMusic /> :
-    icon === 'fas fa-home' ? <FaHome /> :
-    null; // Handle unknown icons
+      icon === 'fas fa-plane' ? <FaPlane /> :
+        icon === 'fas fa-utensils' ? <FaUtensils /> :
+          icon === 'fas fa-camera' ? <FaCamera /> :
+            icon === 'fas fa-heart' ? <FaHeart /> :
+              icon === 'fas fa-gamepad' ? <FaGamepad /> :
+                icon === 'fas fa-brain' ? <FaBrain /> :
+                  icon === 'fas fa-laptop' ? <FaLaptop /> :
+                    icon === 'fas fa-music' ? <FaMusic /> :
+                      icon === 'fas fa-home' ? <FaHome /> :
+                        null; // Handle unknown icons
 
   return (
-    <div className="group bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer border border-gray-100">
-      <div className="text-center">
-        <div className="w-16 h-16 mx-auto bg-custom bg-opacity-10 rounded-full flex items-center justify-center mb-4">
-          {IconComponent && <span className="text-2xl text-custom text-[#2269a1]">{IconComponent}</span>} 
+    <>
+      <Helmet>
+        <link rel="canonical" href="https://viralfluencer.com/Influencer" />
+      </Helmet>
+      <div className="group bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer border border-gray-100">
+        <div className="text-center">
+          <div className="w-16 h-16 mx-auto bg-custom bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+            {IconComponent && <span className="text-2xl text-custom text-[#2269a1]">{IconComponent}</span>}
+          </div>
+          <h3 className="font-semibold text-gray-900">{title}</h3>
+          <p className="text-sm text-gray-500 mt-2">{description}</p>
         </div>
-        <h3 className="font-semibold text-gray-900">{title}</h3>
-        <p className="text-sm text-gray-500 mt-2">{description}</p>
       </div>
-    </div>
+    </>
   );
 }
 
 function InfluencerNiches() {
   const [searchTerm, setSearchTerm] = useState('');
-  
+
   const influencerNiches = [
     { icon: 'fas fa-dumbbell', title: 'Fitness', description: '1.2K Influencers' },
     { icon: 'fas fa-plane', title: 'Travel', description: '2.5K Influencers' },

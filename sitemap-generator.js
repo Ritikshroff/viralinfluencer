@@ -34,10 +34,10 @@ import { createWriteStream } from 'fs';
 async function generateSitemap() {
   const links = [
     { url: '/', changefreq: 'daily', priority: 1.0 },
-    { url: '/about', changefreq: 'weekly', priority: 0.8 },
-    { url: '/services', changefreq: 'weekly', priority: 0.8 },
+    // { url: '/about', changefreq: 'weekly', priority: 0.8 },
+    { url: '/Services', changefreq: 'weekly', priority: 0.8 },
     { url: '/submit-form', changefreq: 'monthly', priority: 0.7 },
-    { url: '/influencer', changefreq: 'monthly', priority: 0.7 },
+    { url: '/Influencer', changefreq: 'monthly', priority: 0.7 },
     // Add more pages as needed
   ];
 
