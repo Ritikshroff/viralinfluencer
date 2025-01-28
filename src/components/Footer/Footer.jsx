@@ -80,7 +80,7 @@ const Footer = () => {
         <div className="w-full sm:w-1/3">
           <h3 className="text-lg font-bold mb-3">Legal</h3>
           <ul className="text-gray-400 text-sm">
-            <li className="mb-1 hover:text-white"><a href="#">Privacy Policy</a></li>
+            <li className="mb-1 hover:text-white"><a href="/privacy-policy.html">Privacy Policy</a></li>
             <li className="mb-1 hover:text-white"><a href="#">Terms of Service</a></li>
             <li className="mb-1 hover:text-white"><a href="#">Cookie Policy</a></li>
             <li className="mb-1 hover:text-white"><a href="#">Disclaimer</a></li>
