@@ -19,6 +19,9 @@ import DashboardLayout from './components/Dashboard/DashboardLayout.jsx'
 import BrandDashboard from './components/Dashboard/BrandDashboard.jsx'
 import InfluencerDashboard from './components/Dashboard/InfluencerDashboard.jsx'
 import InfluencerNiches from './components/InfluencerSection/InfluencerNiches.jsx'
+import reportWebVitals from './reportWebVitals.js'
+reportWebVitals(console.log);
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
