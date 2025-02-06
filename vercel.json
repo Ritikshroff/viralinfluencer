@@ -5,7 +5,7 @@
       "has": [
         { "type": "host", "value": "viralfluencer.com" }
       ],
-      "destination": "https://www.viralfluencer.com/$1",
+      "destination": "https://www.viralfluencer.com",
       "permanent": true
     }
   ],
