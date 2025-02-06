@@ -5,14 +5,14 @@
       "has": [
         { "type": "host", "value": "viralfluencer.com" }
       ],
-      "destination": "https://www.viralfluencer.com",
+      "destination": "https://www.viralfluencer.com/$1",
       "permanent": true
     }
   ],
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/"
+      "destination": "/index.html"
     }
   ],
   "headers": [
