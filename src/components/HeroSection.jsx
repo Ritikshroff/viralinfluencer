@@ -90,7 +90,7 @@ const HeroSection = () => {
     <>
       <Helmet>
         <link rel="canonical" href="https://viralfluencer.com" />
-        <title>Influencer Marketing Strategies 2 Boost Your Brand | Viralfluencer</title>
+        <title>Influencer Marketing Strategies To Boost Your Brand | Viralfluencer</title>
         <meta name="description" content="Discover effective influencer marketing strategies with Viral Influencer. Connect with top influencers and create impactful campaigns that drive real results." />
       </Helmet>
 
