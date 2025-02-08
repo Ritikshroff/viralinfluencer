@@ -1,10 +1,9 @@
 
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import './App.css';
 import { Outlet } from 'react-router-dom';
 import Navbar from './components/Header/Navbar';
 import Footer from './components/Footer/Footer';
-// import TopNavBar from './components/Dashboard/TopNavBar';
 
 function Layout() {
     const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +17,7 @@ function Layout() {
         } else {
             setIsLoggedIn(false); // Otherwise, they are not logged in
         }
-    }, []); // Empty dependency array to only run this on initial render
+    }, [isLoggedIn]); // Empty dependency array to only run this on initial render
 
     return (
         <div>

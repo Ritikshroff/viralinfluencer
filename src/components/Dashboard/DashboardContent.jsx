@@ -1,8 +1,29 @@
-import React from 'react';
+import  { useEffect } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
 const DashboardContent = () => {
+  useEffect(() => {
+    // Get the current URL and handle both hash and search parameters
+    const url = window.location.href;
+    let code;
+
+    // Check if code is in search parameters
+    const searchParams = new URLSearchParams(window.location.search);
+    code = searchParams.get('code');
+
+    // If not in search params, check hash fragment
+    if (!code && url.includes('#')) {
+      const hashParams = new URLSearchParams(url.split('#')[1]);
+      code = hashParams.get('code');
+    }
+    
+    if (code) {
+      console.log('Instagram Auth Code:', code);
+      localStorage.setItem('instagram_auth_code', code);
+    }
+  }, []);
+
   const lineChartOptions = {
     title: {
       text: 'Engagement Trends'
@@ -58,7 +79,13 @@ const DashboardContent = () => {
       <div className="flex flex-col items-center mb-6 space-y-2 md:flex-row md:justify-between">
         <h1 className="text-2xl font-bold">Dashboard Overview</h1>
         <div className="space-x-4">
-          <button className="px-4 py-2 bg-blue-500 text-white rounded-md">Export Data</button>
+          <a 
+            href="https://www.instagram.com/oauth/authorize?enable_fb_login=0&force_authentication=1&client_id=1635152597208805&redirect_uri=https://www.viralfluencer.com/&response_type=code&scope=instagram_business_basic%2Cinstagram_business_manage_messages%2Cinstagram_business_manage_comments%2Cinstagram_business_content_publish%2Cinstagram_business_manage_insights" 
+            className="px-4 py-2 bg-blue-500 text-white rounded-md"
+          >
+            Connect Instagram
+          </a>
+          <a href="https://www.instagram.com/oauth/authorize?enable_fb_login=0&force_authentication=1&client_id=1635152597208805&redirect_uri=https://www.viralfluencer.com/&response_type=code&scope=instagram_business_basic%2Cinstagram_business_manage_messages%2Cinstagram_business_manage_comments%2Cinstagram_business_content_publish%2Cinstagram_business_manage_insights" target="_self" rel="noopener noreferrer" className="px-4 py-2 bg-blue-500 text-white rounded-md">Export Data</a>
           <button className="px-4 py-2 bg-green-500 text-white rounded-md">Update Profile</button>
         </div>
       </div>

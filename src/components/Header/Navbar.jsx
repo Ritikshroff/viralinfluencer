@@ -14,10 +14,10 @@ const Navbar = ({ isOpen, setIsOpen }) => (
           <NavLink href="/" label="Home" />
           <NavLink href="/Services" label="Services" />
           <NavLink href="/Influencer" label="Influencers" />
-          <NavLink href="#case_studies" label="Case Studies" disabled/>
+          <NavLink href="#case_studies" label="Case Studies" disabled />
           <NavLink href="/submit-form" label="Contact Us" />
-          {/* <ButtonContainer href="/signup" name='Signup' />
-          <ButtonContainer href="/login" name='Login' /> */}
+          <ButtonContainer href="/signup" name='Signup' />
+          <ButtonContainer href="/login" name='Login' />
         </div>
 
         {/* Mobile Menu Button */}
@@ -73,21 +73,20 @@ const Navbar = ({ isOpen, setIsOpen }) => (
         >
           Contact Us
         </a>
-      
 
-        {/* <a href="/signup" className='block px-4 py-2 text-[#555555] hover:text-[#2e70a1] transition duration-300'><button className="mt-4 md:mt-0 px-4 py-2 text-white bg-[#2269a1] rounded-md">Signup</button></a>
-        <a href="/login" className='block px-4 py-2 text-[#555555] hover:text-[#2e70a1] transition duration-300'><button className="mt-4 md:mt-0 px-4 py-2 text-white bg-[#2269a1] rounded-md">Login</button></a> */}
+
+        <a href="/signup" className='block px-4 py-2 text-[#555555] hover:text-[#2e70a1] transition duration-300'><button className="mt-4 md:mt-0 px-4 py-2 text-white bg-[#2269a1] rounded-md">Signup</button></a>
+        <a href="/login" className='block px-4 py-2 text-[#555555] hover:text-[#2e70a1] transition duration-300'><button className="mt-4 md:mt-0 px-4 py-2 text-white bg-[#2269a1] rounded-md">Login</button></a>
       </div>
     )}
   </nav>
 );
 
-const NavLink = ({ href, label , disabled }) => (
+const NavLink = ({ href, label, disabled }) => (
   <a
     href={href}
-    className={`text-gray-700 hover:text-blue-600 transition duration-300 font-medium ${
-      disabled ? 'opacity-50 pointer-events-none' : '' 
-    }`}
+    className={`text-gray-700 hover:text-blue-600 transition duration-300 font-medium ${disabled ? 'opacity-50 pointer-events-none' : ''
+      }`}
   >
     {label}
   </a>
