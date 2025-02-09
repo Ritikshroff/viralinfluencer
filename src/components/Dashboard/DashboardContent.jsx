@@ -133,8 +133,8 @@ const DashboardContent = () => {
           console.error("❌ Error fetching access token:", error.response?.data || error.message);
         })
         .finally(() => {
-          const cleanURL = window.location.origin + window.location.pathname;
-          window.history.replaceState(null, "", cleanURL);
+          // const cleanURL = window.location.origin + window.location.pathname;
+          // window.history.replaceState(null, "", cleanURL);
         });
     }
 }, []);
