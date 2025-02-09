@@ -68,21 +68,22 @@ const DashboardContent = () => {
       });
 
       // Exchange the code for an access token
-      axios
-        .post("https://viralfluencerbackend.onrender.com/get-instagram-token", formData, {
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        })
+      axios.post(
+        "https://viralfluencerbackend.onrender.com/get-instagram-token",
+        {
+          formData
+        },
+        {
+          headers: { "Content-Type": "application/json" }, // ✅ Fix: Ensure JSON format
+        }
+      )
         .then((response) => {
-          if (response.data.access_token) {
-            console.log("✅ Instagram Access Token:", response.data.access_token);
-
-            // Store access token in state and local storage
-            setAccessToken(response.data.access_token);
-            localStorage.setItem("access_token", response.data.access_token);
-            localStorage.setItem("is_instagram_connected", "true");
-            console.log(accessToken, "accessToken");
-          }
-
+          console.log("✅ Instagram Access Token:", response.data.access_token);
+          localStorage.setItem("access_token", response.data.access_token);
+          localStorage.setItem("is_instagram_connected", "true");
+          setAccessToken(response.data.access_token);
+          console.log(accessToken, "accessToken");
+          
         })
         .catch((error) => {
           console.error("❌ Error fetching access token:", error.response?.data || error.message);
