@@ -7,45 +7,91 @@ const DashboardContent = () => {
   const [accessToken, setAccessToken] = useState(localStorage.getItem('access_token') || '');
 
   
-  useEffect(() => {
+  // useEffect(() => {
     
-    const searchParams = new URLSearchParams(window.location.search);
-    let code = searchParams.get('code');
+  //   const searchParams = new URLSearchParams(window.location.search);
+  //   let code = searchParams.get('code');
 
-    if (code) {
-      console.log('Instagram Auth Code:', code);
-      localStorage.setItem('instagram_auth_code', code);
+  //   if (code) {
+  //     console.log('Instagram Auth Code:', code);
+  //     localStorage.setItem('instagram_auth_code', code);
 
-      // Exchange the code for an access token using axios
-      const formData = new URLSearchParams({
-        client_id: '1635152597208805',
-        client_secret: '4cd2d7d245840be9eebc956063fdf5f9',
-        grant_type: 'authorization_code',
-        redirect_uri: 'https://www.viralfluencer.com/dashboard',
-        code: code
-      });
+  //     // Exchange the code for an access token using axios
+  //     const formData = new URLSearchParams({
+  //       client_id: '1635152597208805',
+  //       client_secret: '4cd2d7d245840be9eebc956063fdf5f9',
+  //       grant_type: 'authorization_code',
+  //       redirect_uri: 'https://www.viralfluencer.com/dashboard',
+  //       code: code
+  //     });
 
-      axios.post('https://api.instagram.com/oauth/access_token', formData, {
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        }
-      })
-        .then(response => {
-          if (response.data.access_token) {
-            console.log('Instagram Access Token:', response.data.access_token);
-            localStorage.setItem('access_token', response.data.access_token);
-            console.log(accessToken, "accessToken");
+  //     axios.post('https://api.instagram.com/oauth/access_token', formData, {
+  //       headers: {
+  //         'Content-Type': 'application/x-www-form-urlencoded'
+  //       }
+  //     })
+  //       .then(response => {
+  //         if (response.data.access_token) {
+  //           console.log('Instagram Access Token:', response.data.access_token);
+  //           localStorage.setItem('access_token', response.data.access_token);
+  //           console.log(accessToken, "accessToken");
             
-            setAccessToken(response.data.access_token);
-            localStorage.setItem('is_instagram_connected', 'true');
-          }
-        })
-        .catch(error => console.error('Error fetching access token:', error));
+  //           setAccessToken(response.data.access_token);
+  //           localStorage.setItem('is_instagram_connected', 'true');
+  //         }
+  //       })
+  //       .catch(error => console.error('Error fetching access token:', error));
         
 
-      // Remove 'code' from URL without reloading the page
-      // const cleanURL = window.location.origin + window.location.pathname;
-      // window.history.replaceState(null, '', cleanURL);
+  //     // Remove 'code' from URL without reloading the page
+  //     // const cleanURL = window.location.origin + window.location.pathname;
+  //     // window.history.replaceState(null, '', cleanURL);
+  //   }
+  // }, []);
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+    let code = searchParams.get("code");
+
+    // Prevent reuse of the same code
+    if (code && !localStorage.getItem("instagram_auth_code")) {
+      console.log("Instagram Auth Code:", code);
+      localStorage.setItem("instagram_auth_code", code);
+
+      // Prepare data for API request
+      const formData = new URLSearchParams({
+        client_id: "1635152597208805",
+        client_secret: "8bb9edcf64d5f9eb8dffbfa386db78de",
+        grant_type: "authorization_code",
+        redirect_uri: "https://www.viralfluencer.com/dashboard",
+        code: code,
+      });
+
+      // Exchange the code for an access token
+      axios
+        .post("https://viralfluencerbackend.onrender.com/get-instagram-token", formData, {
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        })
+        .then((response) => {
+          if (response.data.access_token) {
+            console.log("✅ Instagram Access Token:", response.data.access_token);
+
+            // Store access token in state and local storage
+            setAccessToken(response.data.access_token);
+            localStorage.setItem("access_token", response.data.access_token);
+            localStorage.setItem("is_instagram_connected", "true");
+            console.log(accessToken, "accessToken");
+          }
+
+        })
+        .catch((error) => {
+          console.error("❌ Error fetching access token:", error.response?.data || error.message);
+        })
+        .finally(() => {
+          // Remove 'code' from URL to prevent reuse
+          const cleanURL = window.location.origin + window.location.pathname;
+          window.history.replaceState(null, "", cleanURL);
+        });
     }
   }, []);
 
