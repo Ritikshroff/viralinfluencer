@@ -101,25 +101,25 @@ const DashboardContent = () => {
     const searchParams = new URLSearchParams(window.location.search);
     let code = searchParams.get("code");
 
-    // Prevent reuse of the same code
     if (code && !localStorage.getItem("instagram_auth_code")) {
       console.log("Instagram Auth Code:", code);
       localStorage.setItem("instagram_auth_code", code);
 
-      // Prepare form data correctly
-      const formData = new URLSearchParams();
-      formData.append("client_id", "1635152597208805");
-      formData.append("client_secret", "8bb9edcf64d5f9eb8dffbfa386db78de");
-      formData.append("grant_type", "authorization_code");
-      formData.append("redirect_uri", "https://www.viralfluencer.com/dashboard");
-      formData.append("code", code);
+      // Prepare JSON payload
+      const payload = {
+        client_id: "1635152597208805",
+        client_secret: "8bb9edcf64d5f9eb8dffbfa386db78de",
+        grant_type: "authorization_code",
+        redirect_uri: "https://www.viralfluencer.com/dashboard",
+        code: code,
+      };
 
-      console.log("📤 Sending Form Data:", formData.toString());
+      console.log("📤 Sending JSON Payload:", payload);
 
       // Exchange the code for an access token
-      axios.post("https://viralfluencerbackend.onrender.com/get-instagram-token", formData, {
+      axios.post("https://viralfluencerbackend.onrender.com/get-instagram-token", payload, {
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded", // ✅ Fix: Correct Content-Type
+          "Content-Type": "application/json", // ✅ Fix: Ensure JSON format
         },
       })
         .then((response) => {
@@ -133,13 +133,11 @@ const DashboardContent = () => {
           console.error("❌ Error fetching access token:", error.response?.data || error.message);
         })
         .finally(() => {
-          // Remove 'code' from URL to prevent reuse
           const cleanURL = window.location.origin + window.location.pathname;
           window.history.replaceState(null, "", cleanURL);
         });
     }
 }, []);
-
 
   const lineChartOptions = {
     title: {
