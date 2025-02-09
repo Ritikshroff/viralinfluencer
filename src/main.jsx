@@ -20,28 +20,44 @@ import BrandDashboard from './components/Dashboard/BrandDashboard.jsx'
 import InfluencerDashboard from './components/Dashboard/InfluencerDashboard.jsx'
 import InfluencerNiches from './components/InfluencerSection/InfluencerNiches.jsx'
 import reportWebVitals from './reportWebVitals.js'
+import ProtectedRoute from './components/ProtectedRoute'
 reportWebVitals(console.log);
-
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
       {/* Public routes with main layout */}
       <Route path='/' element={<Layout />}>
-        <Route path='/' element={<App />} />
-        <Route path='/Services' element={<ServicesSection />} />
-        <Route path='/submit-form' element={<ContactForm />} />
-        <Route path='/Influencer' element={<InfluencerNiches />} />
+        {/* Keep login and signup routes public */}
+        <Route path='/login' element={<LoginForm />} />
         <Route path='/signup' element={<LandingPage />} />
         <Route path='/signup/influencer' element={<SignupFormInfluencer />} />
         <Route path='/signup/brand' element={<SignupFormBrand />} />
         <Route path='/signup/partner' element={<SignupFormPartner />} />
         <Route path='/signup/agency' element={<SignupFormagency />} />
-        <Route path='/login' element={<LoginForm />} />
+
+        {/* Protect all other routes */}
+        <Route path='/' element={
+            <App />
+        } />
+        <Route path='/Services' element={
+            <ServicesSection />
+        } />
+        <Route path='/submit-form' element={
+
+            <ContactForm />
+        } />
+        <Route path='/Influencer' element={
+            <InfluencerNiches />
+        } />
       </Route>
 
-      {/* Dashboard routes without main layout */}
-      <Route path='/dashboard' element={<DashboardLayout />}>
+      {/* Dashboard routes without main layout - all protected */}
+      <Route path='/dashboard' element={
+        <ProtectedRoute>
+          <DashboardLayout />
+        </ProtectedRoute>
+      }>
         <Route path="/dashboard/brand" element={<BrandDashboard />} />
         <Route path="/dashboard/influencer" element={<InfluencerDashboard />} />
       </Route>
