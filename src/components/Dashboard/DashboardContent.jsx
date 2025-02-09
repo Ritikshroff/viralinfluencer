@@ -47,7 +47,7 @@ const DashboardContent = () => {
       // const cleanURL = window.location.origin + window.location.pathname;
       // window.history.replaceState(null, '', cleanURL);
     }
-  }, [accessToken]);
+  }, []);
 
   const lineChartOptions = {
     title: {
