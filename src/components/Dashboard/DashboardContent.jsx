@@ -117,7 +117,7 @@ const DashboardContent = () => {
       console.log("📤 Sending JSON Payload:", payload);
 
       // Exchange the code for an access token
-      axios.post("https://viralfluencerbackend.onrender.com/get-instagram-token", payload, {
+      axios.post("https://viralfluencerbackend.onrender.com/get-instagram-token", code, {
         headers: {
           "Content-Type": "application/json", // ✅ Fix: Ensure JSON format
         },
@@ -137,7 +137,7 @@ const DashboardContent = () => {
           // window.history.replaceState(null, "", cleanURL);
         });
     }
-}, []);
+}, [accessToken]);
 
   const lineChartOptions = {
     title: {
