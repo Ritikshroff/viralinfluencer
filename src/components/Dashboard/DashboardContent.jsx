@@ -103,8 +103,6 @@ const DashboardContent = () => {
           >
             Connect Instagram
           </a>
-          <a href="https://www.instagram.com/oauth/authorize?enable_fb_login=0&force_authentication=1&client_id=1635152597208805&redirect_uri=https://www.viralfluencer.com/&response_type=code&scope=instagram_business_basic%2Cinstagram_business_manage_messages%2Cinstagram_business_manage_comments%2Cinstagram_business_content_publish%2Cinstagram_business_manage_insights" target="_self" rel="noopener noreferrer" className="px-4 py-2 bg-blue-500 text-white rounded-md">Export Data</a>
-          <button className="px-4 py-2 bg-green-500 text-white rounded-md">Update Profile</button>
         </div>
       </div>
 
