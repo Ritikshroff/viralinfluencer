@@ -1,46 +1,53 @@
-import  { useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
 const DashboardContent = () => {
-  // useEffect(() => {
-  //   // Get the current URL and handle both hash and search parameters
-  //   const url = window.location.href;
-  //   let code;
+  const [accessToken, setAccessToken] = useState(localStorage.getItem('access_token') || '');
 
-  //   // Check if code is in search parameters
-  //   const searchParams = new URLSearchParams(window.location.search);
-  //   code = searchParams.get('code');
-
-  //   // If not in search params, check hash fragment
-  //   if (!code && url.includes('#')) {
-  //     const hashParams = new URLSearchParams(url.split('#')[1]);
-  //     code = hashParams.get('code');
-  //   }
-    
-  //   if (code) {
-  //     console.log('Instagram Auth Code:', code);
-  //     localStorage.setItem('instagram_auth_code', code);
-  //   }
-  // }, []);
-
-
-
+  
   useEffect(() => {
-    // Extract the 'code' parameter from the URL
+    
     const searchParams = new URLSearchParams(window.location.search);
     let code = searchParams.get('code');
 
-    // If 'code' is found, store it in localStorage
     if (code) {
       console.log('Instagram Auth Code:', code);
       localStorage.setItem('instagram_auth_code', code);
+
+      // Exchange the code for an access token
+      fetch('https://api.instagram.com/oauth/access_token', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams({
+          client_id: '1635152597208805',
+          client_secret: '4cd2d7d245840be9eebc956063fdf5f9', // Replace with your client secret
+          grant_type: 'authorization_code',
+          redirect_uri: 'https://www.viralfluencer.com/dashboard',
+          code: code
+        })
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.access_token) {
+            console.log('Instagram Access Token:', data.access_token);
+            localStorage.setItem('access_token', data.access_token);
+            console.log(accessToken , "accessToken");
+            
+            setAccessToken(data.access_token);
+            localStorage.setItem('is_instagram_connected', 'true');
+          }
+        })
+        .catch(error => console.error('Error fetching access token:', error));
+        
 
       // Remove 'code' from URL without reloading the page
       const cleanURL = window.location.origin + window.location.pathname;
       window.history.replaceState(null, '', cleanURL);
     }
-  }, []);
+  }, [accessToken]);
 
   const lineChartOptions = {
     title: {
