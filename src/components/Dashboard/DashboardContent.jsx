@@ -3,24 +3,42 @@ import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
 const DashboardContent = () => {
-  useEffect(() => {
-    // Get the current URL and handle both hash and search parameters
-    const url = window.location.href;
-    let code;
+  // useEffect(() => {
+  //   // Get the current URL and handle both hash and search parameters
+  //   const url = window.location.href;
+  //   let code;
 
-    // Check if code is in search parameters
-    const searchParams = new URLSearchParams(window.location.search);
-    code = searchParams.get('code');
+  //   // Check if code is in search parameters
+  //   const searchParams = new URLSearchParams(window.location.search);
+  //   code = searchParams.get('code');
 
-    // If not in search params, check hash fragment
-    if (!code && url.includes('#')) {
-      const hashParams = new URLSearchParams(url.split('#')[1]);
-      code = hashParams.get('code');
-    }
+  //   // If not in search params, check hash fragment
+  //   if (!code && url.includes('#')) {
+  //     const hashParams = new URLSearchParams(url.split('#')[1]);
+  //     code = hashParams.get('code');
+  //   }
     
+  //   if (code) {
+  //     console.log('Instagram Auth Code:', code);
+  //     localStorage.setItem('instagram_auth_code', code);
+  //   }
+  // }, []);
+
+
+
+  useEffect(() => {
+    // Extract the 'code' parameter from the URL
+    const searchParams = new URLSearchParams(window.location.search);
+    let code = searchParams.get('code');
+
+    // If 'code' is found, store it in localStorage
     if (code) {
       console.log('Instagram Auth Code:', code);
       localStorage.setItem('instagram_auth_code', code);
+
+      // Remove 'code' from URL without reloading the page
+      const cleanURL = window.location.origin + window.location.pathname;
+      window.history.replaceState(null, '', cleanURL);
     }
   }, []);
 
@@ -80,7 +98,7 @@ const DashboardContent = () => {
         <h1 className="text-2xl font-bold">Dashboard Overview</h1>
         <div className="space-x-4">
           <a 
-            href="https://www.instagram.com/oauth/authorize?enable_fb_login=0&force_authentication=1&client_id=1635152597208805&redirect_uri=https://www.viralfluencer.com/&response_type=code&scope=instagram_business_basic%2Cinstagram_business_manage_messages%2Cinstagram_business_manage_comments%2Cinstagram_business_content_publish%2Cinstagram_business_manage_insights" 
+            href="https://www.instagram.com/oauth/authorize?enable_fb_login=0&force_authentication=1&client_id=1635152597208805&redirect_uri=https://www.viralfluencer.com/dashboard&response_type=code&scope=instagram_business_basic%2Cinstagram_business_manage_messages%2Cinstagram_business_manage_comments%2Cinstagram_business_content_publish%2Cinstagram_business_manage_insights" 
             className="px-4 py-2 bg-blue-500 text-white rounded-md"
           >
             Connect Instagram
