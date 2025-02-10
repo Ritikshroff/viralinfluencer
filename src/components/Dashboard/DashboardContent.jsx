@@ -147,30 +147,25 @@ useEffect(() => {
     console.log("Instagram Auth Code:", code);
     localStorage.setItem("instagram_auth_code", code);
 
-    // ✅ Send as x-www-form-urlencoded
-    const formData = new URLSearchParams();
-    formData.append("client_id", "1635152597208805");
-    formData.append("client_secret", "8bb9edcf64d5f9eb8dffbfa386db78de");
-    formData.append("grant_type", "authorization_code");
-    formData.append("redirect_uri", "https://www.viralfluencer.com/dashboard");
-    formData.append("code", code);
-
+    // Send the code as JSON
     axios
-      .post("http://127.0.0.1:5000/get-instagram-token", formData, {
-        headers: { "Content-Type": "application/x-www-form-urlencoded" }, // ✅ Correct Content-Type
-      })
+      .post("http://127.0.0.1:5000/get-instagram-token", 
+        { code: code },  // Send as JSON object
+        {
+          headers: { "Content-Type": "application/json" }, // Specify JSON content type
+        }
+      )
       .then((response) => {
         console.log("✅ Instagram Access Token:", response.data.access_token);
-        const accessTokenvar = localStorage.setItem("access_token", response.data.access_token);
-        setAccessToken(accessTokenvar);
+        localStorage.setItem("access_token", response.data.access_token);
+        setAccessToken(response.data.access_token);
         localStorage.setItem("is_instagram_connected", "true");
-        console.log(accessToken, "response.data.access_token");
       })
       .catch((error) => {
         console.error("❌ Error fetching access token:", error.response?.data || error.message);
       });
   }
-}, [accessToken]);
+}, []);  // Remove accessToken from dependency array to prevent infinite loops
 
   const lineChartOptions = {
     title: {
