@@ -97,75 +97,47 @@ const DashboardContent = () => {
   //   }
   // }, []);
 
-//   useEffect(() => {
-//     const searchParams = new URLSearchParams(window.location.search);
-//     let code = searchParams.get("code");
+  useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+    let code = searchParams.get("code");
 
-//     if (code && !localStorage.getItem("instagram_auth_code")) {
-//       console.log("Instagram Auth Code:", code);
-//       localStorage.setItem("instagram_auth_code", code);
+    if (code && !localStorage.getItem("instagram_auth_code")) {
+      console.log("Instagram Auth Code:", code);
+      localStorage.setItem("instagram_auth_code", code);
 
-//       // Prepare JSON payload
-//       const payload = {
-//         client_id: "1635152597208805",
-//         client_secret: "8bb9edcf64d5f9eb8dffbfa386db78de",
-//         grant_type: "authorization_code",
-//         redirect_uri: "https://www.viralfluencer.com/dashboard",
-//         code: code,
-//       };
+      // Prepare JSON payload
+      const payload = {
+        client_id: "1635152597208805",
+        client_secret: "8bb9edcf64d5f9eb8dffbfa386db78de",
+        grant_type: "authorization_code",
+        redirect_uri: "https://www.viralfluencer.com/dashboard",
+        code: code,
+      };
 
-//       console.log("📤 Sending JSON Payload:", payload);
+      console.log("📤 Sending JSON Payload:", payload);
 
-//       // Exchange the code for an access token
-//       axios.post("https://viralfluencerbackend.onrender.com/get-instagram-token", code, {
-//         headers: {
-//           "Content-Type": "application/json", // ✅ Fix: Ensure JSON format
-//         },
-//       })
-//         .then((response) => {
-//           console.log("✅ Instagram Access Token:", response.data.access_token);
-//           localStorage.setItem("access_token", response.data.access_token);
-//           localStorage.setItem("is_instagram_connected", "true");
-//           setAccessToken(response.data.access_token);
-//           console.log(accessToken, "accessToken");
-//         })
-//         .catch((error) => {
-//           console.error("❌ Error fetching access token:", error.response?.data || error.message);
-//         })
-//         .finally(() => {
-//           // const cleanURL = window.location.origin + window.location.pathname;
-//           // window.history.replaceState(null, "", cleanURL);
-//         });
-//     }
-// }, [accessToken]);
-
-useEffect(() => {
-  const searchParams = new URLSearchParams(window.location.search);
-  let code = searchParams.get("code");
-
-  if (code && !localStorage.getItem("instagram_auth_code")) {
-    console.log("Instagram Auth Code:", code);
-    localStorage.setItem("instagram_auth_code", code);
-
-    // Send the code as JSON
-    axios
-      .post("http://127.0.0.1:5000/get-instagram-token", 
-        { code: code },  // Send as JSON object
-        {
-          headers: { "Content-Type": "application/json" }, // Specify JSON content type
-        }
-      )
-      .then((response) => {
-        console.log("✅ Instagram Access Token:", response.data.access_token);
-        localStorage.setItem("access_token", response.data.access_token);
-        setAccessToken(response.data.access_token);
-        localStorage.setItem("is_instagram_connected", "true");
+      // Exchange the code for an access token
+      axios.post("https://viralfluencerbackend.onrender.com/get-instagram-token", code, {
+        headers: {
+          "Content-Type": "application/json", // ✅ Fix: Ensure JSON format
+        },
       })
-      .catch((error) => {
-        console.error("❌ Error fetching access token:", error.response?.data || error.message);
-      });
-  }
-}, []);  // Remove accessToken from dependency array to prevent infinite loops
+        .then((response) => {
+          console.log("✅ Instagram Access Token:", response.data.access_token);
+          localStorage.setItem("access_token", response.data.access_token);
+          localStorage.setItem("is_instagram_connected", "true");
+          setAccessToken(response.data.access_token);
+          console.log(accessToken, "accessToken");
+        })
+        .catch((error) => {
+          console.error("❌ Error fetching access token:", error.response?.data || error.message);
+        })
+        .finally(() => {
+          // const cleanURL = window.location.origin + window.location.pathname;
+          // window.history.replaceState(null, "", cleanURL);
+        });
+    }
+}, [accessToken]);
 
   const lineChartOptions = {
     title: {
