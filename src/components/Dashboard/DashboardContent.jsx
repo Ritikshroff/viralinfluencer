@@ -117,7 +117,7 @@ const DashboardContent = () => {
       console.log("📤 Sending JSON Payload:", payload);
 
       // Exchange the code for an access token
-      axios.post("https://viralfluencerbackend.onrender.com/get-instagram-token", code, {
+      axios.post("https://api.instagram.com/oauth/access_token", payload, {
         headers: {
           "Content-Type": "application/json", // ✅ Fix: Ensure JSON format
         },
@@ -127,7 +127,7 @@ const DashboardContent = () => {
           localStorage.setItem("access_token", response.data.access_token);
           localStorage.setItem("is_instagram_connected", "true");
           setAccessToken(response.data.access_token);
-          console.log(accessToken, "accessToken");
+          console.log(accessToken, "accessToken is got!!!!!!!" );
         })
         .catch((error) => {
           console.error("❌ Error fetching access token:", error.response?.data || error.message);
