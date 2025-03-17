@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://viralfluencer.com/sitemap.xml
