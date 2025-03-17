@@ -118,9 +118,9 @@ const DashboardContent = () => {
 
       // Exchange the code for an access token
       axios.post("https://api.instagram.com/oauth/access_token", payload, {
-        headers: {
-          "Content-Type": "application/json", // ✅ Fix: Ensure JSON format
-        },
+        // headers: {
+        //   "Content-Type": "application/json", // ✅ Fix: Ensure JSON format
+        // },
       })
         .then((response) => {
           console.log("✅ Instagram Access Token:", response.data.access_token);
@@ -201,6 +201,8 @@ const DashboardContent = () => {
             Connect Instagram
           </a>
         </div>
+        <p>{accessToken?accessToken:"not found token"}</p>
+        <p>{accessToken}</p>
       </div>
 
       {/* Statistic Cards Section */}
