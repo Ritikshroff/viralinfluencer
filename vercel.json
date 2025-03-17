@@ -1,11 +1,8 @@
 {
   "redirects": [
     {
-      "source": "/(.*)",
-      "has": [
-        { "type": "host", "value": "viralfluencer.com" }
-      ],
-      "destination": "https://www.viralfluencer.com/$1",
+      "source": "www.viralfluencer.com",
+      "destination": "https://viralfluencer.com",
       "permanent": true
     }
   ],
